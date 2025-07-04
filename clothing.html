@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="stylesheet" href="/style.css"> -->
+    <title>JC Fashion For Women - Clothing</title>
+    <!-- favicon -->
+    <link rel="icon" href="https://lh3.googleusercontent.com/a/ACg8ocKDOdNcjUMbB_xGsiedFpTSHeKid9YHn04B8U2fMayphgRAiKQ=s288-c-no" type="image/gif" sizes="16x16">
+    <!-- header links -->
+    <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <div id="1"></div>
+    <script>
+        load("header.html");
+        function load(url) {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(1).innerHTML = req.responseText;
+        }
+    </script>
+
+    <!-- CONTENT SECTION -->
+    <div id="3"></div>
+    <script>
+        load("content.html");
+        function load(url) {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(3).innerHTML = req.responseText;
+        }
+    </script>
+
+    <!-- FOOTER -->
+    <div id="5"></div>
+    <script>
+        load("footer.html");
+        function load(url) {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(5).innerHTML = req.responseText;
+        }
+    </script>
+</body>
+
+<!-- content JS -->
+<script src="content.js"></script>
+<script src="header.js"></script>
+<script src="footer.js"></script>
+</html>

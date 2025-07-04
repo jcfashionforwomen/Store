@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JC Fashion For Women - Contact Us</title>
+  <link rel="icon" href="https://lh3.googleusercontent.com/a/ACg8ocKDOdNcjUMbB_xGsiedFpTSHeKid9YHn04B8U2fMayphgRAiKQ=s288-c-no" type="image/gif" sizes="16x16">
+  <style>
+    :root {
+      --black: #000;
+      --white: #fff;
+      --gray: #f5f5f5;
+      --border: #ddd;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--white);
+      color: var(--black);
+    }
+
+    /* Map */
+    .map {
+      width: 100%;
+      height: 350px;
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Contact Section */
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 40px 20px;
+      background: var(--gray);
+      position: relative;
+    }
+
+    .contact-container::before {
+      content: "";
+      position: absolute;
+      top: 40px;
+      bottom: 40px;
+      left: 50%;
+      width: 1px;
+      background: var(--border);
+      transform: translateX(-50%);
+    }
+
+    .left, .right {
+      flex: 1;
+      min-width: 300px;
+      padding: 20px 40px;
+      box-sizing: border-box;
+      z-index: 1;
+    }
+
+    .left h2, .right h2 {
+      margin-top: 0;
+      font-size: 24px;
+    }
+
+    .contact-info p {
+      margin: 12px 0;
+      font-size: 16px;
+    }
+
+    /* Form Styling */
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin: 12px 0 6px;
+      font-weight: 500;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: 1px solid var(--black);
+      background: var(--white);
+      color: var(--black);
+      font-size: 16px;
+      border-radius: 3px;
+      resize: vertical;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      background: var(--black);
+      color: var(--white);
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 3px;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #222;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .contact-container {
+        flex-direction: column;
+      }
+
+      .contact-container::before {
+        display: none;
+      }
+
+      .left, .right {
+        padding: 20px 20px;
+      }
+    }
+
+     .map {
+    margin-top: 2em; /* 'em' is relative to font size; 2em = approx 2 lines */
+  }
+  
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: var(--black);
+      color: var(--white);
+      font-size: 14px;
+    }
+   
+  </style>
+</head>
+<body>
+  <header><h3>JC</h3>
+    <!-- HEADER -->
+    <div id="1"></div>
+    <script>
+        load("header.html");
+        function load(url) {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(1).innerHTML = req.responseText;
+        }
+    </script>
+</header>
+
+  <!-- Google Map Section -->
+  <div class="map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30519.778812142165!2d81.92173635!3d16.862423299999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a37d6cc763ad1b9%3A0xb3cdeccfe8f39c69!2sMandapeta%2C%20Andhra%20Pradesh%20533308%2C%20India!5e0!3m2!1sen!2sin!4v1719400881172!5m2!1sen!2sin"
+      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="contact-container">
+
+    <!-- Left: Contact Details -->
+    <div class="left">
+      <h2>Registered Store</h2>
+      <div class="contact-info">
+        <p><strong>Business Name:</strong> JC Fashion For Women</p>
+        <p><strong>Address:</strong>  #34-2-2, Ground Floor, Vani Mahal Center, Rythu Bazar Road, Mandapeta - 533308, AndhraPradesh, India</p>
+        <p><strong>Phone:</strong> +91 9391718898</p>
+        <p><strong>Email:</strong> jc.fashionforwomen@gmail.com</p>
+      </div><h1> <br></h1><h1> </h1>
+<h2>Contact Support</h2>
+      <div class="contact-info">
+        <p><strong>Phone:</strong> +91 9391718898</p>
+        <p><strong>Email:</strong> jc.fashionforwomen@gmail.com</p>
+      </div>
+    </div>
+
+    
+   <!-- Right: Contact Form -->
+<div class="right">
+  <h2>Send a Message</h2>
+  <!-- Add an ID to the form -->
+  <form id="contactForm">
+    <label for="name">Your Name:</label>
+    <input type="text" name="name" id="name" required>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" name="phone" id="phone" required>
+
+    <label for="email">Your Email:</label>
+    <input type="email" name="email" id="email" required>
+
+    <label for="comment">Your Message:</label>
+    <textarea name="comment" id="comment" rows="5" required></textarea>
+
+    <button type="submit">Ask a Question</button>
+  </form>
+
+  <!-- Message placeholder -->
+  <p id="formMessage" style="margin-top: 20px; color: green;"></p>
+</div>
+    </div>
+<footer>
+    &copy; 2025 All rights are reserved.
+  </footer>
+<!-- JavaScript to handle submission -->
+<script>
+  const form = document.getElementById('contactForm');
+  const message = document.getElementById('formMessage');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault(); // Prevent default form submission
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mldnkrrj", {
+        method: "POST",
+        headers: { 'Accept': 'application/json' },
+        body: formData
+      });
+
+      if (response.ok) {
+        message.textContent = "Your message has been submitted.";
+        form.reset(); // Optionally clear the form
+      } else {
+        message.textContent = "There was a problem submitting your message. Please try again.";
+        message.style.color = 'red';
+      }
+    } catch (error) {
+      message.textContent = "Error connecting to the server. Please try again later.";
+      message.style.color = 'red';
+    }
+  });
+</script>
+</body>
+<script src="header.js"></script>
+</html>
+
