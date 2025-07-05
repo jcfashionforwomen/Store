@@ -1,44 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> HEADER | E-COMMERCE WEBSITE </title>
-    <!-- favicon -->
-    <link rel="icon" href="https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo" type="image/gif" sizes="16x16">
-    <!-- EXTERNAL LINKS -->
-    <link rel="stylesheet" href="css/header.css">
-    <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-</head>
-<body>
-    
-    <header>
-        <section>
-            <!-- MAIN CONTAINER -->
-            <div id="container">
-                <!-- SHOP NAME -->
-                <div id="shopName"><a href="index.html"> <b>SHOP</b>LANE </a></div>
-                    <!-- COLLCETIONS ON WEBSITE -->
-                    <div id="collection">
-                        <div id="clothing"><a href="clothing.html"> CLOTHING </a></div>
-                        <div id="accessories"><a href="accessories.html"> ACCESSORIES </a></div>
-                    </div>
-                    <!-- SEARCH SECTION -->
-                    <div id="search">
-                        <i class="fas fa-search search"></i>
-                        <input type="text" id="input" name="searchBox" placeholder="Search for Clothing and Accessories">
-                    </div>
-                    <!-- USER SECTION (CART AND USER ICON) -->
-                    <div id="user">
-                        <a href="cart.html"> <i class="fas fa-shopping-cart addedToCart"><div id="badge"> 0 </div></i></a>
-                        <a href="#"> <i class="fas fa-user-circle userIcon"></i> </a>
-                    </div>
-            </div>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>JC Fashion For Women - Header</title>
 
-        </section>
-    </header>
+  <!-- Favicon -->
+ <link rel="icon" href="https://lh3.googleusercontent.com/a/ACg8ocKDOdNcjUMbB_xGsiedFpTSHeKid9YHn04B8U2fMayphgRAiKQ=s288-c-no" type="image/gif" sizes="16x16">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/header.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet"/>
+</head>
+<style>
+  /* RESPONSIVE TWEAKS */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    h1, h2, h3 {
+        font-size: 18px;
+    }
+
+    .nav-item, p, span {
+        font-size: 14px;
+    }
+
+    footer {
+        font-size: 14px;
+        padding: 15px 10px;
+    }
+}
+</style>
+<body>
+<header>
+  <section>
+    <div id="container">
+
+      <!-- LOGO + SHOP NAME -->
+      <div id="shopWrapper">
+        <img src="logo.svg" alt="JC Logo" id="logo"/>
+        <div id="shopName">
+          <a href="index.html"><b>JC</b> Fashion For Women</a>
+        </div>
+      </div>
+
+      <!-- COLLECTION LINKS (Desktop Only) -->
+      <div id="collection">
+        <a href="clothing.html">CLOTHING</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="Support & Policy.html">POLICY</a>
+        <a href="sizeguide.html">SIZE GUIDE</a>
+        <a href="contactus.html">CONTACT US</a>
+        <a href="FAQ.html">FAQ</a>
+      </div>
+
+      <!-- CART + MENU -->
+      <div id="rightMenu">
+        <!-- MENU -->
+        <div id="menuToggle" onclick="toggleSidebar()">☰</div>
+
+        <!-- CART -->
+        <div id="user">
+          <a href="cart.html" style="font-size: 24px; position: relative;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="black" viewBox="0 0 24 24">
+              <path d="M7 18c-1.104 0-2 .896-2 2s.896 2 2 2c1.105 0 2-.896 2-2s-.895-2-2-2zm10 0c-1.104 
+              0-2 .896-2 2s.896 2 2 2c1.105 0 2-.896 2-2s-.895-2-2-2zm1.406-2.611l2.594-7.389a1 
+              1 0 00-.937-1.389h-13.063l-.437-2h-4v2h2.406l1.844 8.411a1 1 0 00.981.789h9.874a1 
+              1 0 00.938-.678z"/>
+            </svg>
+            <div id="badge">0</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</header>
+
+<!-- SIDEBAR (Mobile Menu) -->
+<div id="mobileSidebar" class="sidebar">
+  <div class="sidebar-header">
+    <a href="index.html" target="_blank" style="color: black; text-decoration: none;">
+  <b>JC</b> FASHION FOR WOMEN
+</a>
+    <button id="closeSidebar">&times;</button>
+  </div>
+  <nav class="sidebar-menu">
+    <a href="clothing.html">CLOTHING</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="Support & Policy.html">POLICY</a>
+        <a href="sizeguide.html">SIZE GUIDE</a>
+        <a href="contactus.html">CONTACT US</a>
+        <a href="FAQ.html">FAQ</a>
+  </nav>
+</div>
 
 </body>
+<script src="header.js"></script>
 </html>
