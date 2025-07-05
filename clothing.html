@@ -27,16 +27,363 @@
     </script>
 
     <!-- CONTENT SECTION -->
-    <div id="3"></div>
-    <script>
-        load("content.html");
-        function load(url) {
-            req = new XMLHttpRequest();
-            req.open("GET", url, false);
-            req.send(null);
-            document.getElementById(3).innerHTML = req.responseText;
-        }
-    </script>
+    <div id="3">
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>JC Fashion For Women - CONTENT</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet"/>
+  <link rel="icon" href="https://lh3.googleusercontent.com/a/ACg8ocKDOdNcjUMbB_xGsiedFpTSHeKid9YHn04B8U2fMayphgRAiKQ=s288-c-no" type="image/gif" sizes="16x16">
+  <style>
+    body
+{
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+     margin-top: 50px;
+}
+h1
+{
+    width: 90%;
+    margin: auto;
+    padding: 50px 0;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+#containerClothing, #containerAccessories
+{
+    display: grid;
+    grid-gap: 70px 20px;
+    grid-template-columns: repeat(5, 1fr);
+    width: 90%;
+    margin: auto;
+    padding-bottom: 40px;
+}
+#box 
+{
+    width: 100%;
+    background-color: white;
+    align-content: center;
+    border-radius: 10px;
+    box-shadow: 1px 2px 6px 2px rgb(219, 219, 219);
+}
+#box:hover
+{
+    box-shadow: 1px 6px 3px 0 rgb(185, 185, 185);
+}
+#containerClothing img
+{
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+#containerAccessories img
+{
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+#details
+{
+    padding: 0 15px;
+    text-transform: capitalize;
+}
+#box a 
+{
+    text-decoration: none;
+    color: rgb(29, 29, 29);
+}
+h3
+{
+    font-size: 16px;
+}
+h4
+{
+    font-weight: 100;
+}
+h2
+{
+    color: rgb(5, 55, 112);
+}
+
+/* ----------------------------- MEDIA QUERY --------------------------- */
+
+@media(max-width: 1070px)
+{
+    h1
+    {
+        font-size: 25px;
+    }
+    #containerClothing, #containerAccessories
+    {
+        width: 95%;
+        grid-gap: 10px;
+    }
+}
+@media(max-width: 850px)
+{
+    h1 
+    {
+        width: 80%;
+    }
+    #containerClothing, #containerAccessories
+    {
+        display: grid;
+        grid-gap: 70px 20px;
+        grid-template-columns: repeat(3, 1fr);
+        width: 80%;
+    }    
+}
+@media(max-width: 650px)
+{
+    h1
+    {
+        font-size: 20px;
+    }
+    h1 
+    {
+        width: 90%;
+    }
+    #containerClothing, #containerAccessories
+    {
+        width: 90%;
+    }
+}
+@media(max-width: 600px)
+{
+    h1 
+    {
+        width: 70%;
+    }
+    #containerClothing, #containerAccessories
+    {
+        width: 70%;
+    }
+}
+@media(max-width: 505px)
+{
+    h1 
+    {
+        width: 80%;
+    }
+    #containerClothing, #containerAccessories
+    {
+        width: 80%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+    /* Optional inline CSS for demo/testing */
+    #categoryDropdown {
+  margin: 18px;
+  padding: 8px 8px;
+  font-size: 12px;
+  background-color: black; /* Black background */
+  color: white; /* White text */
+  border: 2px solid white; /* White border */
+  border-radius: 6px; /* Optional: for rounded corners */
+  float: right; /* Align to the right */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+  margin-right: 70px;
+}
+
+#categoryDropdown:hover {
+  background-color: white; /* White background on hover */
+  color: black; /* Black text on hover */
+  border-color: black; /* Black border on hover */
+}
+
+#loadMoreBtn {
+  display: block;
+  margin: 30px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: black; /* Black background */
+  color: white; /* White text */
+  border: 2px solid white; /* White border */
+  border-radius: 4px; /* Optional: for rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+#loadMoreBtn:hover {
+  background-color: white; /* White background on hover */
+  color: black; /* Black text on hover */
+  border-color: black; /* Black border on hover */
+}
+@media (max-width: 600px) {
+  #categoryDropdown {
+    margin-right: 18px; /* Removes the right margin on mobile */
+  }
+}
+  </style>
+</head>
+
+<body>
+  <div id="mainContainer">
+<h1></h1>
+    <!-- CATEGORY FILTER -->
+    <select id="categoryDropdown">
+      <option value="all">All Categories</option>
+    </select>
+
+    <h1>Clothing for Women</h1>
+    <div id="containerClothing">
+      <!-- JS rendered clothing items -->
+    </div>
+ <!-- LOAD MORE BUTTON -->
+    <button id="loadMoreBtn">Load More</button>
+    <h1>Accessories for Women</h1>
+    <div id="containerAccessories">
+      <!-- JS rendered accessories -->
+    </div>
+
+    <!-- Optional Badge for Cart -->
+    <div id="badge" style="text-align: center; margin-top: 10px; font-size: 18px;"></div>
+
+  </div>
+  <script>
+    let contentTitle = [];
+let currentIndex = 0;
+const itemsPerPage = 10;
+let selectedCategory = "all";
+
+console.log(document.cookie);
+
+function dynamicClothingSection(ob) {
+  let boxDiv = document.createElement("div");
+  boxDiv.id = "box";
+
+  let boxLink = document.createElement("a");
+  boxLink.href = "/contentDetails.html?" + ob.id;
+
+  let imgTag = document.createElement("img");
+  imgTag.src = ob.preview;
+
+  let detailsDiv = document.createElement("div");
+  detailsDiv.id = "details";
+
+  let h3 = document.createElement("h3");
+  h3.appendChild(document.createTextNode(ob.name));
+
+  let h4 = document.createElement("h4");
+  h4.appendChild(document.createTextNode(ob.brand));
+
+  let h2 = document.createElement("h2");
+  h2.appendChild(document.createTextNode("rs " + ob.price));
+
+  boxDiv.appendChild(boxLink);
+  boxLink.appendChild(imgTag);
+  boxLink.appendChild(detailsDiv);
+  detailsDiv.appendChild(h3);
+  detailsDiv.appendChild(h4);
+  detailsDiv.appendChild(h2);
+
+  return boxDiv;
+}
+
+let containerClothing = document.getElementById("containerClothing");
+let containerAccessories = document.getElementById("containerAccessories");
+
+function clearContainers() {
+  containerClothing.innerHTML = "";
+  containerAccessories.innerHTML = "";
+}
+
+function renderNextBatch() {
+  // Filter content based on selected category
+  const filtered = selectedCategory === "all"
+    ? contentTitle
+    : contentTitle.filter(item =>
+        item.category.toLowerCase().includes(selectedCategory.toLowerCase()) // Use category field for filtering
+      );
+
+  const end = currentIndex + itemsPerPage;
+  const slice = filtered.slice(currentIndex, end);
+
+  slice.forEach(item => {
+    const element = dynamicClothingSection(item);
+    if (item.isAccessory) {
+      containerAccessories.appendChild(element);
+    } else {
+      containerClothing.appendChild(element);
+    }
+  });
+
+  currentIndex = end;
+
+  // Hide or show the "Load More" button
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
+  if (currentIndex >= filtered.length) {
+    loadMoreBtn.style.display = "none";
+  } else {
+    loadMoreBtn.style.display = "block";
+  }
+}
+
+function populateCategories() {
+  const dropdown = document.getElementById("categoryDropdown");
+  
+  // Get unique categories from the products
+  const categories = [...new Set(contentTitle.map(item => item.category.toLowerCase()))];
+
+  // Add 'all' category to show all products
+  categories.unshift("all");
+
+  categories.forEach(cat => {
+    const option = document.createElement("option");
+    option.value = cat;
+    option.textContent = cat.charAt(0).toUpperCase() + cat.slice(1); // Capitalize first letter
+    dropdown.appendChild(option);
+  });
+}
+
+// Event Listener: Category change
+document.getElementById("categoryDropdown").addEventListener("change", function () {
+  selectedCategory = this.value;
+  currentIndex = 0;
+  clearContainers();
+  renderNextBatch();
+});
+
+// Event Listener: Load more
+document.getElementById("loadMoreBtn").addEventListener("click", renderNextBatch);
+
+// Backend data call
+let httpRequest = new XMLHttpRequest();
+httpRequest.onreadystatechange = function () {
+  if (this.readyState === 4) {
+    if (this.status === 200) {
+      contentTitle = JSON.parse(this.responseText);
+
+      if (document.cookie.indexOf(",counter=") >= 0) {
+        var counter = document.cookie.split(",")[1].split("=")[1];
+        document.getElementById("badge").innerHTML = counter;
+      }
+
+      populateCategories(); // Populate category dropdown
+      renderNextBatch(); // Render first batch of products
+    } else {
+      console.log("call failed!");
+    }
+  }
+};
+
+httpRequest.open(
+  "GET",
+  "https://6856d9ca1789e182b37f3392.mockapi.io/productsapi/products",
+  true
+);
+httpRequest.send();
+
+  </script>
+</body>
+</html>
+
+    </div>
 
     <!-- FOOTER -->
     <div id="5"></div>
@@ -52,7 +399,6 @@
 </body>
 
 <!-- content JS -->
-<script src="content.js"></script>
 <script src="header.js"></script>
 <script src="footer.js"></script>
 </html>
