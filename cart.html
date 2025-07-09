@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JC Fashion For Women - Cart </title>
+    <link rel="stylesheet" href="css/cart.css">
+    <!-- favicon -->
+   <link rel="icon" href="https://lh3.googleusercontent.com/a/ACg8ocKDOdNcjUMbB_xGsiedFpTSHeKid9YHn04B8U2fMayphgRAiKQ=s288-c-no" type="image/gif" sizes="16x16">
+    <!-- header links -->
+    <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+
+</head>
+<body>
+       <!-- HEADER -->
+    <div id="1"></div>
+    <style>
+@media (max-width: 768px) {
+  body {
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  #container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    max-width: 100vw;
+    overflow-x: hidden;
+    padding: 12px 12px;
+    box-sizing: border-box;
+  }
+
+  #shopWrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  #logo {
+    height: 50px;
+    width: auto;
+  }
+
+  #shopName {
+    font-size: 16px;
+    white-space: nowrap;
+  }
+
+  #collection {
+    display: none;
+  }
+
+  #rightMenu {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  #menuToggle {
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  #user {
+    position: relative;
+  }
+
+  #badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    font-size: 10px;
+    padding: 2px 5px;
+    border-radius: 50%;
+  }
+
+  #mobileSidebar {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+}
+</style>
+
+    <script>
+        load("header.html");
+        function load(url)
+        {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(1).innerHTML = req.responseText;
+        }
+    </script>
+
+        <!-- CART CONTAINER -->
+    <div id="cartMainContainer">
+        <h1> Checkout </h1>
+        <h3 id="totalItem"> Total Items: 0 </h3>
+
+        <div id="cartContainer">
+            <!-- JS rendered code -->
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+<div id="5"></div>
+<script>
+    load("footer.html");
+    function load(url) {
+        req = new XMLHttpRequest();
+        req.open("GET", url, false);
+        req.send(null);
+        document.getElementById(5).innerHTML = req.responseText;
+    }
+</script>
+
+    </body>
+<script src="/cart.js"></script>
+<script src="header.js"></script>
+<script src="footer.js"></script>
+</html>
